@@ -17,15 +17,20 @@
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
 
     <style>
-        /* DÜZEN KAYMASI (CLS) İÇİN FONT-FACE GÜNCELLEMESİ */
+        /* DÜZEN KAYMASI (CLS) İÇİN NİHAİ ÇÖZÜM */
+        /* Font Awesome ikonlarına sabit genişlik vererek yüklenirken yer kaplamalarını sağla */
+        .fas, .fab {
+            display: inline-block;
+            width: 1.25em; /* İkonların yatayda kaplayacağı alanı sabitler */
+            text-align: center; /* İkonu bu alanda ortalar */
+        }
+
         @font-face {
           font-family: 'Font Awesome 6 Free';
           font-style: normal;
           font-weight: 900;
           font-display: swap;
           src: url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/webfonts/fa-solid-900.woff2) format("woff2");
-          size-adjust: 105%;
-          ascent-override: 90%;
         }
         @font-face {
           font-family: 'Font Awesome 6 Brands';
@@ -419,7 +424,7 @@
     function toggleFaq(index) {
         const content = document.getElementById(`faq-content-${index}`);
         const icon = document.getElementById(`faq-icon-${index}`);
-        if(content && icon) { // Elemanların varlığını kontrol et
+        if(content && icon) {
             content.classList.toggle('hidden');
             icon.classList.toggle('rotate-180');
         }
@@ -428,14 +433,13 @@
     function toggleArticle() {
         const short = document.getElementById('article-short');
         const full = document.getElementById('article-full');
-        if(short && full) { // Elemanların varlığını kontrol et
+        if(short && full) {
             short.classList.toggle('hidden');
             full.classList.toggle('hidden');
         }
     }
 
     const scrollToTopButton = document.getElementById('scrollToTopButton');
-    // Butonun varlığını kontrol ederek hatayı önle
     if (scrollToTopButton) {
         window.addEventListener('scroll', function() {
             if (window.pageYOffset > 300) {
