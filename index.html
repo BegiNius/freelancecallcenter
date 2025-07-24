@@ -4,31 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Çağrı Merkezi Kariyer | Evden Çalışma Fırsatları</title>
-    <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- ===== PERFORMANS OPTİMİZASYONLARI BAŞLANGIÇ ===== -->
+
+    <!-- 1. Kritik Yazı Tipi Dosyalarını Önceden Yükle (Ağ Bağımlılık Ağacını Kısaltır) -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+
+    <!-- 2. Oluşturmayı Engelleyen CSS'i Ertele -->
     <!-- Tailwind CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"></noscript>
+    
+    <!-- Font Awesome CSS -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
+
     <style>
-        /* Custom Styles for Dark Mode */
+        /* 3. Yazı Tipi Görüntüleme Sorununu Çöz (font-display: swap) */
+        @font-face {
+          font-family: 'Font Awesome 6 Free';
+          font-style: normal;
+          font-weight: 900;
+          font-display: swap; /* Bu satır eklendi */
+          src: url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/webfonts/fa-solid-900.woff2) format("woff2");
+        }
+        @font-face {
+          font-family: 'Font Awesome 6 Brands';
+          font-style: normal;
+          font-weight: 400;
+          font-display: swap; /* Bu satır eklendi */
+          src: url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/webfonts/fa-brands-400.woff2) format("woff2");
+        }
+
+        /* Diğer Custom Stiller */
         html { scroll-behavior: smooth; }
         body { min-height: 1024px; }
         .rounded-button { border-radius: 8px !important; }
         .rotate-180 { transform: rotate(180deg); }
-        
-        /* Prose styles for dark mode article content */
         .prose { line-height: 1.6; color: #D1D5DB; }
         .prose h2, .prose h3 { color: #F9FAFB; margin-top: 2rem; margin-bottom: 1rem; }
         .prose p, .prose ul, .prose li, .prose a { color: #D1D5DB; margin-bottom: 1rem; }
         .prose a { text-decoration: underline; color: #60A5FA; }
         .prose a:hover { color: #93C5FD; }
-
         input[type="number"]::-webkit-outer-spin-button,
         input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
         input[type="number"] { -moz-appearance: textfield; }
-
         .cta-button { transition: transform 0.2s ease, box-shadow 0.2s ease; }
         .cta-button:hover { transform: translateY(-2px); }
     </style>
+    <!-- ===== PERFORMANS OPTİMİZASYONLARI BİTİŞ ===== -->
+
 </head>
 <body class="bg-gray-900 text-gray-300">
 
