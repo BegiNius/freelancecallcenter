@@ -401,36 +401,54 @@
             <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400"><p>© 2025 Çağrı Merkezi Kariyer. Tüm hakları saklıdır.</p></div>
         </div>
     </footer>
-        
+    
+    <!-- Sticky CTA ve Scroll to Top butonları -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <a href="https://wa.me/905551234567" class="bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-colors cursor-pointer" aria-label="WhatsApp üzerinden bize ulaşın">
+            <i class="fab fa-whatsapp text-2xl" aria-hidden="true"></i>
+        </a>
+    </div>
+
+    <button id="scrollToTopButton" class="fixed bottom-6 left-6 bg-blue-500 text-white p-3 rounded-full shadow-lg hover:bg-blue-600 transition-colors cursor-pointer hidden" aria-label="Sayfanın başına dön">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    
 </div>
 
 <script>
     function toggleFaq(index) {
         const content = document.getElementById(`faq-content-${index}`);
         const icon = document.getElementById(`faq-icon-${index}`);
-        content.classList.toggle('hidden');
-        icon.classList.toggle('rotate-180');
+        if(content && icon) { // Elemanların varlığını kontrol et
+            content.classList.toggle('hidden');
+            icon.classList.toggle('rotate-180');
+        }
     }
 
     function toggleArticle() {
         const short = document.getElementById('article-short');
         const full = document.getElementById('article-full');
-        short.classList.toggle('hidden');
-        full.classList.toggle('hidden');
+        if(short && full) { // Elemanların varlığını kontrol et
+            short.classList.toggle('hidden');
+            full.classList.toggle('hidden');
+        }
     }
 
     const scrollToTopButton = document.getElementById('scrollToTopButton');
-    window.addEventListener('scroll', function() {
-        if (window.pageYOffset > 300) {
-            scrollToTopButton.classList.remove('hidden');
-        } else {
-            scrollToTopButton.classList.add('hidden');
-        }
-    });
+    // Butonun varlığını kontrol ederek hatayı önle
+    if (scrollToTopButton) {
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                scrollToTopButton.classList.remove('hidden');
+            } else {
+                scrollToTopButton.classList.add('hidden');
+            }
+        });
 
-    scrollToTopButton.addEventListener('click', function() {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
+        scrollToTopButton.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
 </script>
 
 </body>
