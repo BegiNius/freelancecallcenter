@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EvdenKazanç</title>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Tailwind CSS (Remember to configure this in your project) -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /*  Custom Styles  - These replace Vue's scoped styles. Put in a separate CSS file if preferred */
+        .rounded-button {
+            border-radius: 8px !important;
+        }
+
+        .rotate-180 {
+            transform: rotate(180deg);
+        }
+
+        .prose {
+            line-height: 1.6;
+        }
+
+        .prose h3 {
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .prose p {
+            margin-bottom: 1rem;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            min-height: 1024px;
+        }
+
+        input[type="number"]::-webkit-outer-spin-button,
+        input[type="number"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        input[type="number"] {
+            -moz-appearance: textfield;
+        }
+
+        /*  Add responsive styles if needed.  The original code uses tailwind classes for responsiveness */
+
+        /*Example:  */
+        /* @media (min-width: 768px) {  */
+        /*    .some-element {  */
+        /*        font-size: 1.2rem;  */
+        /*    }  */
+        /* }  */
+
+    </style>
+
+</head>
+<body>
+
+<div class="min-h-screen bg-white">
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <i class="fas fa-headset text-2xl text-blue-600 mr-3"></i>
+                    <h1 class="text-xl font-bold text-gray-900">EvdenKazanç</h1>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="tel:+905551234567" class="text-blue-600 font-semibold hover:text-blue-700 cursor-pointer">
+                        <i class="fas fa-phone mr-2"></i>
+                        0555 123 45 67
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-r from-blue-50 to-indigo-100 py-20 overflow-hidden">
+        <div class="absolute inset-0">
+        </div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+                    Evden Çalışarak<br>
+                    <span class="text-blue-600">Kazanç Sağlayın</span>
+                </h1>
+                <p class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+                    Müşteri temsilcisi olarak evden çalışın, esnek saatlerde freelance gelir elde edin.
+                    Deneyim gerektirmeyen, eğitim destekli iş fırsatları sizi bekliyor.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="tel:+905551234567" class="bg-white text-blue-600 px-8 py-4 text-lg font-semibold rounded-button border-2 border-blue-600 hover:bg-blue-50 transition-colors whitespace-nowrap cursor-pointer">
+                        <i class="fas fa-headset mr-2"></i>
+                        Bizi Ara: 0555 123 45 67
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Avantajlar Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                    Neden Evden Müşteri Temsilcisi Olmalısınız?
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Freelance müşteri temsilciliği ile hayatınızı değiştirin. Esnek çalışma saatleri,
+                    sürekli gelir ve kariyer gelişimi fırsatları.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-blue-50 p-8 rounded-lg text-center">
+                    <div class="w-16 h-16 mx-auto mb-4 bg-blue-600 rounded-full flex items-center justify-center">
+                        <i class="fas fa-home text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Evden Çalışma</h3>
+                    <p class="text-gray-600">
+                        Kendi evinizin konforunda çalışın. Ulaşım masrafı yok,
+                        zaman kaybı yok. Sadece bilgisayar ve internet bağlantısı yeterli.
+                    </p>
+                </div>
+                <div class="bg-green-50 p-8 rounded-lg text-center">
+                    <div class="w-16 h-16 mx-auto mb-4 bg-green-600 rounded-full flex items-center justify-center">
+                        <i class="fas fa-clock text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Esnek Saatler</h3>
+                    <p class="text-gray-600">
+                        Kendi programınızı belirleyin. Part-time veya full-time,
+                        size uygun saatlerde çalışma imkanı.
+                    </p>
+                </div>
+                <div class="bg-purple-50 p-8 rounded-lg text-center">
+                    <div class="w-16 h-16 mx-auto mb-4 bg-purple-600 rounded-full flex items-center justify-center">
+                        <i class="fas fa-money-bill-wave text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Yüksek Kazanç</h3>
+                    <p class="text-gray-600">
+                        Saatlik 25-50 TL arası kazanç imkanı. Performansa dayalı
+                        bonus sistemi ile gelir artışı fırsatları.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Nasıl Çalışır Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                    Nasıl Çalışır?
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Müşteri temsilcisi olarak çalışmaya başlamak için gereken adımlar çok basit.
+                    Hemen başvurun ve kazanmaya başlayın.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="w-20 h-20 mx-auto mb-4 bg-blue-600 rounded-full flex items-center justify-center">
+                        <span class="text-white text-2xl font-bold">1</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Başvuru</h3>
+                    <p class="text-gray-600">Telefon ile iletişime geçin ve başvuru sürecini başlatın.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-20 h-20 mx-auto mb-4 bg-green-600 rounded-full flex items-center justify-center">
+                        <span class="text-white text-2xl font-bold">2</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Eğitim</h3>
+                    <p class="text-gray-600">Ücretsiz online eğitim programımıza katılın ve sertifika alın.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-20 h-20 mx-auto mb-4 bg-purple-600 rounded-full flex items-center justify-center">
+                        <span class="text-white text-2xl font-bold">3</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Test</h3>
+                    <p class="text-gray-600">Basit bir değerlendirme testi ile yetkinliklerinizi gösterin.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-20 h-20 mx-auto mb-4 bg-orange-600 rounded-full flex items-center justify-center">
+                        <span class="text-white text-2xl font-bold">4</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Çalışmaya Başla</h3>
+                    <p class="text-gray-600">Onay aldıktan sonra hemen çalışmaya başlayın ve kazanın.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Kazanç Potansiyeli Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                        Kazanç Potansiyelinizi Keşfedin
+                    </h2>
+                    <p class="text-lg text-gray-600 mb-8">
+                        Müşteri temsilcisi olarak çalışarak elde edebileceğiniz gelir miktarları
+                        ve ödeme koşulları hakkında detaylı bilgiler.
+                    </p>
+                    <div class="space-y-6">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-dollar-sign text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-900">Saatlik Ücret</h3>
+                                <p class="text-gray-600">25-50 TL arası değişken ücret sistemi</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-calendar-alt text-green-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-900">Haftalık Ödeme</h3>
+                                <p class="text-gray-600">Her hafta düzenli ödeme garantisi</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-trophy text-purple-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-900">Performans Bonusu</h3>
+                                <p class="text-gray-600">Başarılı çalışma için ek kazanç fırsatları</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gradient-to-br from-blue-50 to-indigo-100 p-8 rounded-lg">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">Aylık Kazanç Hesabı</h3>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center py-3 border-b border-gray-200">
+                            <span class="text-gray-600">Günlük 4 saat çalışma</span>
+                            <span class="font-semibold">100-200 TL</span>
+                        </div>
+                        <div class="flex justify-between items-center py-3 border-b border-gray-200">
+                            <span class="text-gray-600">Haftalık (5 gün)</span>
+                            <span class="font-semibold">500-1000 TL</span>
+                        </div>
+                        <div class="flex justify-between items-center py-3 border-b border-gray-200">
+                            <span class="text-gray-600">Aylık kazanç</span>
+                            <span class="font-semibold text-green-600">2000-4000 TL</span>
+                        </div>
+                        <div class="flex justify-between items-center py-3">
+                            <span class="text-gray-600">Performans bonusu</span>
+                            <span class="font-semibold text-blue-600">+500-1000 TL</span>
+                        </div>
+                    </div>
+                    <div class="mt-6 text-center">
+                        <button class="bg-blue-600 text-white px-8 py-3 rounded-button hover:bg-blue-700 transition-colors whitespace-nowrap cursor-pointer">
+                            Kazanmaya Başla
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                    Başarı Hikayeleri
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Evden çalışarak hayatlarını değiştiren müşteri temsilcilerimizin deneyimleri.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div>
+                            <h3 class="font-semibold text-gray-900">Ayşe K.</h3>
+                            <p class="text-gray-600">İstanbul</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        "6 aydır evden müşteri temsilcisi olarak çalışıyorum. Aylık 3500 TL kazanıyorum
+                        ve çocuklarımla daha fazla zaman geçirebiliyorum."
+                    </p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div>
+                            <h3 class="font-semibold text-gray-900">Mehmet A.</h3>
+                            <p class="text-gray-600">Ankara</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        "Emekli olduktan sonra evden çalışma fırsatı buldum. Hem aktif kalıyorum
+                        hem de ek gelir elde ediyorum. Çok memnunum."
+                    </p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div>
+                            <h3 class="font-semibold text-gray-900">Fatma S.</h3>
+                            <p class="text-gray-600">İzmir</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        "Üniversite öğrencisiyim ve part-time çalışıyorum. Hem okuyorum hem de
+                        kendi harçlığımı çıkarıyorum. Harika bir deneyim!"
+                    </p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- FAQ Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                    Sık Sorulan Sorular
+                </h2>
+                <p class="text-xl text-gray-600">
+                    Evden müşteri temsilcisi olarak çalışma hakkında merak ettikleriniz.
+                </p>
+            </div>
+            <div class="space-y-4">
+                <div class="border border-gray-200 rounded-lg">
+                    <button
+                            class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 cursor-pointer"
+                            onclick="toggleFaq(0)"
+                    >
+                        <span class="font-semibold text-gray-900">Hangi yaş aralığında çalışabilirim?</span>
+                        <i class="fas fa-chevron-down text-gray-400 transition-transform" id="faq-icon-0"></i>
+                    </button>
+                    <div class="px-6 pb-4 hidden" id="faq-content-0">
+                        <p class="text-gray-600">
+                            18-65 yaş aralığında herkes başvurabilir. Yaş sınırı yoktur,
+                            önemli olan iletişim beceriniz ve çalışma motivasyonunuzdur.
+                        </p>
+                    </div>
+                </div>
+                <div class="border border-gray-200 rounded-lg">
+                    <button
+                            class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 cursor-pointer"
+                            onclick="toggleFaq(1)"
+                    >
+                        <span class="font-semibold text-gray-900">Hangi teknik donanıma ihtiyacım var?</span>
+                        <i class="fas fa-chevron-down text-gray-400 transition-transform" id="faq-icon-1"></i>
+                    </button>
+                    <div class="px-6 pb-4 hidden" id="faq-content-1">
+                        <p class="text-gray-600">
+                            Bilgisayar veya laptop, stabil internet bağlantısı ve kulaklık yeterlidir.
+                            Özel bir yazılım veya donanım gerekmez.
+                        </p>
+                    </div>
+                </div>
+                <div class="border border-gray-200 rounded-lg">
+                    <button
+                            class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 cursor-pointer"
+                            onclick="toggleFaq(2)"
+                    >
+                        <span class="font-semibold text-gray-900">Ödemeler nasıl yapılır?</span>
+                        <i class="fas fa-chevron-down text-gray-400 transition-transform" id="faq-icon-2"></i>
+                    </button>
+                    <div class="px-6 pb-4 hidden" id="faq-content-2">
+                        <p class="text-gray-600">
+                            Ödemeler haftalık olarak banka hesabınıza EFT ile yapılır.
+                            Minimum ödeme tutarı 500 TL'dir.
+                        </p>
+                    </div>
+                </div>
+                <div class="border border-gray-200 rounded-lg">
+                    <button
+                            class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 cursor-pointer"
+                            onclick="toggleFaq(3)"
+                    >
+                        <span class="font-semibold text-gray-900">Eğitim süreci nasıl işler?</span>
+                        <i class="fas fa-chevron-down text-gray-400 transition-transform" id="faq-icon-3"></i>
+                    </button>
+                    <div class="px-6 pb-4 hidden" id="faq-content-3">
+                        <p class="text-gray-600">
+                            2-3 günlük online eğitim programı ile başlarsınız. Video dersler,
+                            pratik uygulamalar ve sertifika sınavı dahildir.
+                        </p>
+                    </div>
+                </div>
+                <div class="border border-gray-200 rounded-lg">
+                    <button
+                            class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 cursor-pointer"
+                            onclick="toggleFaq(4)"
+                    >
+                        <span class="font-semibold text-gray-900">Çalışma saatleri nasıl belirlenir?</span>
+                        <i class="fas fa-chevron-down text-gray-400 transition-transform" id="faq-icon-4"></i>
+                    </button>
+                    <div class="px-6 pb-4 hidden" id="faq-content-4">
+                        <p class="text-gray-600">
+                            Tamamen esnek çalışma saatleri. Minimum günlük 2 saat,
+                            maksimum 8 saat çalışabilirsiniz. Vardiya sistemi mevcuttur.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Article Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-lg p-8 shadow-sm">
+                <h2 class="text-3xl font-bold text-gray-900 mb-6">
+                    Evden Müşteri Temsilcisi Olarak Çalışmanın Avantajları ve Freelance Kazanç Rehberi
+                </h2>
+                <div class="prose max-w-none">
+                    <p class="text-lg text-gray-600 mb-6">
+                        Günümüzde teknolojinin gelişmesi ile birlikte evden çalışma imkanları artmış ve
+                        müşteri temsilciliği alanında freelance olarak çalışmak popüler hale gelmiştir.
+                        Bu rehberde evden müşteri temsilcisi olarak nasıl çalışabileceğiniz ve
+                        sürdürülebilir bir gelir elde edebileceğiniz konularında detaylı bilgiler bulacaksınız.
+                    </p>
+                    <div id="article-short">
+                        <p class="text-gray-600 mb-4">
+                            Evden müşteri temsilcisi olarak çalışmak, hem kişisel özgürlüğünüzü korumanızı
+                            hem de düzenli bir gelir elde etmenizi sağlar. Bu çalışma modeli özellikle...
+                        </p>
+                        <button
+                                onclick="toggleArticle()"
+                                class="bg-blue-600 text-white px-6 py-3 rounded-button hover:bg-blue-700 transition-colors whitespace-nowrap cursor-pointer"
+                        >
+                            Devamını Oku
+                        </button>
+                    </div>
+                    <div id="article-full" class="space-y-6 hidden">
+                        <h3 class="text-2xl font-semibold text-gray-900">Evden Müşteri Temsilciliği Nedir?</h3>
+                        <p class="text-gray-600">
+                            Evden müşteri temsilciliği, şirketlerin müşteri hizmetleri departmanlarında
+                            uzaktan çalışma imkanı sunan bir iş modelidir. Bu sistemde çalışanlar,
+                            kendi evlerinin konforunda müşteri sorularını yanıtlar, şikayetleri çözümler
+                            ve satış süreçlerinde destek sağlarlar. Freelance müşteri temsilcisi olarak
+                            çalışmak, geleneksel ofis ortamının kısıtlamalarından uzak, esnek bir
+                            çalışma deneyimi sunar.
+                        </p>
+                        <h3 class="text-2xl font-semibold text-gray-900">Freelance Müşteri Temsilcisi Olmanın Avantajları</h3>
+                        <p class="text-gray-600">
+                            Freelance müşteri temsilcisi olarak çalışmanın birçok avantajı bulunmaktadır.
+                            Bunların başında esnek çalışma saatleri gelir. Kendi programınızı
+                            belirleyebilir, aile yaşamınız ve diğer sorumluluklarınızla uyumlu
+                            bir çalışma düzeni oluşturabilirsiniz. Ayrıca ulaşım masraflarından
+                            tasarruf ederken, kendi çalışma ortamınızı düzenleyebilirsiniz.
+                        </p>
+                        <h3 class="text-2xl font-semibold text-gray-900">Gerekli Teknik Donanım ve Beceriler</h3>
+                        <p class="text-gray-600">
+                            Evden müşteri temsilcisi olarak çalışmak için temel teknik donanımlara
+                            ihtiyacınız vardır. Bunlar arasında güvenilir bir bilgisayar veya laptop,
+                            stabil internet bağlantısı, kaliteli kulaklık ve mikrofon yer alır.
+                            Teknik beceriler açısından ise temel bilgisayar kullanımı, iletişim
+                            yazılımları ve müşteri yönetim sistemleri hakkında bilgi sahibi olmanız
+                            yeterlidir.
+                        </p>
+                        <h3 class="text-2xl font-semibold text-gray-900">Kazanç Potansiyeli ve Ödeme Sistemleri</h3>
+                        <p class="text-gray-600">
+                            Freelance müşteri temsilcisi olarak kazanç potansiyeliniz çalışma saatleriniz
+                            ve performansınıza bağlı olarak değişir. Genellikle saatlik ücret sistemi
+                            uygulanır ve bu ücret 25-50 TL arasında değişebilir. Deneyimli temsilciler
+                            ve yüksek performans gösterenler daha yüksek ücret alabilirler. Aylık
+                            kazanç potansiyeli 2000-5000 TL arasında değişmektedir.
+                        </p>
+                        <h3 class="text-2xl font-semibold text-gray-900">Çalışma Saatleri ve Vardiya Sistemi</h3>
+                        <p class="text-gray-600">
+                            Müşteri temsilciliği genellikle vardiya sistemi ile çalışır. Sabah,
+                            öğlen ve akşam vardiyaları arasından size uygun olanları seçebilirsiniz.
+                            Minimum günlük 2 saat çalışma zorunluluğu olan sistemlerde, maksimum
+                            8 saate kadar çalışabilirsiniz. Hafta sonu çalışma imkanları da
+                            mevcuttur ve genellikle daha yüksek ücret ödenebilir.
+                        </p>
+                        <h3 class="text-2xl font-semibold text-gray-900">Eğitim ve Gelişim Fırsatları</h3>
+                        <p class="text-gray-600">
+                            Çoğu şirket yeni başlayan müşteri temsilcilerine kapsamlı eğitim programları
+                            sunar. Bu eğitimler genellikle 2-5 gün sürer ve ürün bilgisi, iletişim
+                            teknikleri, problem çözme becerileri ve sistem kullanımı konularını kapsar.
+                            Sürekli gelişim için düzenli olarak güncellenmiş eğitim materyalleri
+                            ve webinarlar sunulur.
+                        </p>
+                        <h3 class="text-2xl font-semibold text-gray-900">Performans Değerlendirme ve Bonus Sistemleri</h3>
+                        <p class="text-gray-600">
+                            Freelance müşteri temsilcisi olarak performansınız çeşitli kriterlerle
+                            değerlendirilir. Bunlar arasında müşteri memnuniyeti, çözüm süresi,
+                            doğruluk oranı ve profesyonellik yer alır. Yüksek performans gösteren
+                            temsilciler bonus ödemeleri alabilir ve daha iyi projelerde çalışma
+                            fırsatı elde edebilirler.
+                        </p>
+                        <h3 class="text-2xl font-semibold text-gray-900">Kariyer Gelişimi ve İleriye Dönük Fırsatlar</h3>
+                        <p class="text-gray-600">
+                            Müşteri temsilciliği deneyimi, müşteri hizmetleri alanında kariyer
+                            gelişimi için önemli bir basamaktır. Deneyimli temsilciler takım
+                            lideri, eğitmen veya kalite kontrol uzmanı pozisyonlarına
+                            yükselebilirler. Ayrıca edinilen deneyim ile kendi müşteri hizmetleri
+                            danışmanlığı işinizi kurabilirsiniz.
+                        </p>
+                        <h3 class="text-2xl font-semibold text-gray-900">Başvuru Süreci ve Gereksinimler</h3>
+                        <p class="text-gray-600">
+                            Evden müşteri temsilcisi olarak çalışmaya başlamak için genellikle
+                            basit bir başvuru süreci yeterlidir. Temel kişisel bilgiler,
+                            iletişim detayları ve çalışma tercihleri hakkında bilgi vermeniz
+                            gerekir. Çoğu pozisyon için özel deneyim aranmaz, ancak iyi
+                            iletişim becerileri ve müşteri odaklı yaklaşım önemlidir.
+                        </p>
+                        <h3 class="text-2xl font-semibold text-gray-900">Çalışma Ortamı ve Verimlilik İpuçları</h3>
+                        <p class="text-gray-600">
+                            Evden çalışırken verimli olmak için uygun bir çalışma ortamı
+                            oluşturmanız önemlidir. Sessiz bir alan, ergonomik oturma düzeni
+                            ve düzenli molalar verimliliğinizi artırır. Ayrıca çalışma
+                            saatlerinizi net bir şekilde belirlemeniz ve aile üyeleriyle
+                            bu konuda anlaşmanız gerekir.
+                        </p>
+                        <h3 class="text-2xl font-semibold text-gray-900">Yasal Düzenlemeler ve Vergi Konuları</h3>
+                        <p class="text-gray-600">
+                            Freelance müşteri temsilcisi olarak çalışırken vergi yükümlülüklerinizi
+                            bilmeniz önemlidir. Elde ettiğiniz geliri beyan etmeniz ve gerekli
+                            vergi ödemelerini yapmanız gerekir. Bu konuda bir muhasebeci veya
+                            mali müşavir ile çalışmanız önerilir.
+                        </p>
+                        <h3 class="text-2xl font-semibold text-gray-900">Sonuç ve Öneriler</h3>
+                        <p class="text-gray-600">
+                            Evden müşteri temsilcisi olarak çalışmak, esnek çalışma saatleri
+                            ve düzenli gelir elde etmek isteyenler için mükemmel bir fırsattır.
+                            Doğru yaklaşım ve sürekli gelişim ile bu alanda başarılı olabilir
+                            ve kariyer hedeflerinize ulaşabilirsiniz. Başlamak için gereken
+                            tek şey motivasyon ve öğrenme isteğidir.
+                        </p>
+                        <button
+                                onclick="toggleArticle()"
+                                class="bg-gray-600 text-white px-6 py-3 rounded-button hover:bg-gray-700 transition-colors whitespace-nowrap cursor-pointer"
+                        >
+                            Kısalt
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- CTA Section -->
+    <section class="py-20 bg-blue-600">
+        <div class="max-w-4xl mx-auto px-4 sm:lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+                Hemen Başlayın ve Kazanmaya Başlayın
+            </h2>
+            <p class="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+                Evden müşteri temsilcisi olarak çalışmaya bugün başlayın.
+                Ücretsiz eğitim, esnek saatler ve garantili kazanç sizi bekliyor.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="tel:+905551234567" class="bg-white text-blue-600 px-8 py-4 text-lg font-semibold rounded-button hover:bg-gray-100 transition-colors whitespace-nowrap cursor-pointer">
+                    <i class="fas fa-phone mr-2"></i>
+                    Hemen Ara: 0555 123 45 67
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-headset text-2xl text-blue-400 mr-3"></i>
+                        <h3 class="text-xl font-bold">EvdenKazanç</h3>
+                    </div>
+                    <p class="text-gray-400">
+                        Evden çalışarak müşteri temsilcisi olun ve freelance gelir elde edin.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Hızlı Linkler</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white cursor-pointer">Nasıl Çalışır</a></li>
+                        <li><a href="#" class="hover:text-white cursor-pointer">Kazanç Hesaplama</a></li>
+                        <li><a href="#" class="hover:text-white cursor-pointer">Başarı Hikayeleri</a></li>
+                        <li><a href="#" class="hover:text-white cursor-pointer">Sık Sorulan Sorular</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">İletişim</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>
+                            <i class="fas fa-phone mr-2"></i>
+                            0555 123 45 67
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope mr-2"></i>
+                            info@evdenkazanc.com
+                        </li>
+                        <li>
+                            <i class="fas fa-clock mr-2"></i>
+                            7/24 Destek
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Sosyal Medya</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white cursor-pointer">
+                            <i class="fab fa-facebook-f text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white cursor-pointer">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white cursor-pointer">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white cursor-pointer">
+                            <i class="fab fa-linkedin-in text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>© 2025 EvdenKazanç. Tüm hakları saklıdır.</p>
+                <div class="mt-4 space-x-4">
+                    <a href="#" class="hover:text-white cursor-pointer">Gizlilik Politikası</a>
+                    <a href="#" class="hover:text-white cursor-pointer">Kullanım Şartları</a>
+                    <a href="#" class="hover:text-white cursor-pointer">KVKK</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Sticky CTA Button -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <a href="tel:+905551234567" class="bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-colors cursor-pointer">
+            <i class="fab fa-whatsapp text-2xl"></i>
+        </a>
+    </div>
+    <!-- Scroll to Top Button -->
+    <button
+            id="scrollToTopButton"
+            class="fixed bottom-6 left-6 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition-colors cursor-pointer hidden"
+    >
+        <i class="fas fa-arrow-up"></i>
+    </button>
+</div>
+
+<script>
+    function toggleFaq(index) {
+        const content = document.getElementById(`faq-content-${index}`);
+        const icon = document.getElementById(`faq-icon-${index}`);
+
+        if (content.classList.contains('hidden')) {
+            content.classList.remove('hidden');
+            icon.classList.add('rotate-180');
+        } else {
+            content.classList.add('hidden');
+            icon.classList.remove('rotate-180');
+        }
+    }
+
+    function toggleArticle() {
+        const short = document.getElementById('article-short');
+        const full = document.getElementById('article-full');
+
+        if (short.classList.contains('hidden')) {
+            short.classList.remove('hidden');
+            full.classList.add('hidden');
+        } else {
+            short.classList.add('hidden');
+            full.classList.remove('hidden');
+        }
+    }
+
+    window.addEventListener('scroll', function() {
+        const button = document.getElementById('scrollToTopButton');
+        if (window.pageYOffset > 300) {
+            button.classList.remove('hidden');
+        } else {
+            button.classList.add('hidden');
+        }
+    });
+
+    document.getElementById('scrollToTopButton').addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+</script>
+
+</body>
+</html>
