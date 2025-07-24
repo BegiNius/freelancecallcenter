@@ -3,12 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- ===== META ETİKETLERİ BAŞLANGIÇ ===== -->
+
     <title>Çağrı Merkezi Kariyer | Evden Çalışma Fırsatları</title>
+    
+    <!-- SEO Meta Etiketleri -->
+    <meta name="description" content="Evden çağrı merkezi iş fırsatları! Esnek saatlerde çalışarak müşteri temsilcisi olabilir, deneyim gerektirmeden yüksek kazanç elde edebilirsiniz. Detaylı bilgi için hemen arayın.">
+    <meta name="keywords" content="çağrı merkezi, evden çalışma, müşteri temsilcisi, remote iş, freelance, evden iş, çağrı merkezi iş ilanları">
+    <meta name="author" content="Çağrı Merkezi Kariyer">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://SİTENİZİNADRESİ.com">
+
+    <!-- Open Graph Meta Etiketleri (Facebook, LinkedIn, WhatsApp vb. için) -->
+    <meta property="og:title" content="Çağrı Merkezi Kariyer | Evden Çalışma Fırsatları">
+    <meta property="og:description" content="Esnek saatlerde çalışarak müşteri temsilcisi olabilir, deneyim gerektirmeden yüksek kazanç elde edebilirsiniz.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://SİTENİZİNADRESİ.com">
+    <meta property="og:image" content="https://SİTENİZİNADRESİ.com/paylasim-gorseli.jpg"> <!-- ÖNEMLİ: Buraya 1200x630 piksel boyutunda bir görselin URL'sini ekleyin -->
+    <meta property="og:locale" content="tr_TR">
+
+    <!-- Twitter Card Meta Etiketleri -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Çağrı Merkezi Kariyer | Evden Çalışma Fırsatları">
+    <meta name="twitter:description" content="Esnek saatlerde çalışarak müşteri temsilcisi olabilir, deneyim gerektirmeden yüksek kazanç elde edebilirsiniz.">
+    <meta name="twitter:image" content="https://SİTENİZİNADRESİ.com/paylasim-gorseli.jpg"> <!-- ÖNEMLİ: Buraya aynı görselin URL'sini ekleyin -->
+
+    <!-- ===== META ETİKETLERİ BİTİŞ ===== -->
 
     <style>
         /* --- ÖZEL CSS STİLLERİ BAŞLANGIÇ --- */
-
-        /* 1. Genel ve Temel Ayarlar */
+        /* ... (CSS kodunuz burada değişmeden kalır) ... */
         :root {
             --color-bg: #111827;
             --color-bg-light: #1F2937;
@@ -24,7 +49,6 @@
             --color-orange: #F59E0B;
             --color-yellow: #FBBF24;
         }
-
         html { scroll-behavior: smooth; }
         body {
             margin: 0;
@@ -38,71 +62,36 @@
         p { margin: 0; }
         ul { list-style: none; margin: 0; padding: 0; }
         button { border: none; background: none; color: inherit; font: inherit; cursor: pointer; }
-
-        /* SVG İkonları için temel stil */
-        .icon {
-            display: inline-block;
-            width: 1em;
-            height: 1em;
-            vertical-align: -0.125em;
-            fill: currentColor;
-        }
-
-        /* 2. Yardımcı Sınıflar */
+        .icon { display: inline-block; width: 1em; height: 1em; vertical-align: -0.125em; fill: currentColor; }
         .container { max-width: 80rem; margin-left: auto; margin-right: auto; padding-left: 1rem; padding-right: 1rem; }
         @media (min-width: 640px) { .container { padding-left: 1.5rem; padding-right: 1.5rem; } }
         @media (min-width: 1024px) { .container { padding-left: 2rem; padding-right: 2rem; } }
-        
         .text-center { text-align: center; }
         .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border-width: 0; }
         .rotate-180 { transform: rotate(180deg); transition: transform 0.2s; }
-
-        /* 3. Buton Stilleri */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            padding: 1rem 2rem;
-            font-size: 1.125rem;
-            font-weight: 600;
-            border-radius: 0.5rem;
-            cursor: pointer;
-            text-align: center;
-            transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
-        }
+        .btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 1rem 2rem; font-size: 1.125rem; font-weight: 600; border-radius: 0.5rem; cursor: pointer; text-align: center; transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease; }
         .btn-primary { background-color: var(--color-blue-dark); color: var(--color-white); }
         .btn-primary:hover { background-color: #1D4ED8; transform: translateY(-2px); }
         .btn-white { background-color: var(--color-white); color: var(--color-blue-dark); }
         .btn-white:hover { background-color: #E5E7EB; }
-
-        /* 4. Sayfa Bölümleri */
         .section { padding: 5rem 0; }
         .section-light { background-color: var(--color-bg-light); }
         .section-dark { background-color: var(--color-bg); }
         .section-title { font-size: 2rem; font-weight: 700; margin-bottom: 1rem; }
         @media (min-width: 768px) { .section-title { font-size: 2.25rem; } }
         .section-subtitle { font-size: 1.25rem; color: var(--color-text-light); max-width: 48rem; margin: 0 auto 4rem auto; }
-
-        /* Header */
         .header { position: sticky; top: 0; z-index: 50; background-color: var(--color-bg-light); border-bottom: 1px solid var(--color-bg-lighter); }
         .header .container { display: flex; justify-content: space-between; align-items: center; height: 4rem; }
         .header .logo { display: flex; align-items: center; font-size: 1.25rem; color: var(--color-white); font-weight: 700; }
         .header .logo .icon { font-size: 1.5rem; color: var(--color-blue); margin-right: 0.75rem; }
         .header .contact-link { font-weight: 600; color: var(--color-blue); display: flex; align-items: center; gap: 0.5rem; }
         .header .contact-link:hover { color: #93C5FD; }
-
-        /* Hero Section */
         .hero-title { font-size: 2.25rem; margin-bottom: 1.5rem; line-height: 1.2; }
         @media (min-width: 768px) { .hero-title { font-size: 4rem; } }
         .hero-title span { color: var(--color-blue); }
         .hero-subtitle { font-size: 1.25rem; color: var(--color-text-light); max-width: 48rem; margin: 0 auto 2rem auto; }
-
-        /* Grid Sistemleri */
         .grid { display: grid; gap: 2rem; }
         @media (min-width: 768px) { .grid-cols-2 { grid-template-columns: repeat(2, 1fr); align-items: center; } .grid-cols-3 { grid-template-columns: repeat(3, 1fr); } .grid-cols-4 { grid-template-columns: repeat(4, 1fr); } }
-
-        /* Kartlar */
         .card { background-color: var(--color-bg); padding: 2rem; border-radius: 0.75rem; border: 1px solid var(--color-bg-lighter); }
         .card-hover { transition: transform 0.2s ease; }
         .card-hover:hover { transform: scale(1.05); }
@@ -110,17 +99,13 @@
         .card .icon-wrapper .icon { font-size: 1.5rem; }
         .card h3 { font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem; }
         .card p { color: var(--color-text-light); }
-
-        /* FAQ Accordion */
         .faq-item { background-color: var(--color-bg); border: 1px solid var(--color-border); border-radius: 0.5rem; }
         .faq-button { display: flex; justify-content: space-between; align-items: center; width: 100%; padding: 1rem 1.5rem; text-align: left; font-weight: 600; color: var(--color-white); }
         .faq-button:hover { background-color: var(--color-bg-light); }
         .faq-content { padding: 0 1.5rem 1rem 1.5rem; color: var(--color-text-light); }
         .hidden { display: none; }
-
-        /* Footer */
         .footer { padding: 3rem 0; background-color: var(--color-bg-light); border-top: 1px solid var(--color-bg-lighter); }
-        .footer .logo { display: flex; align-items: center; gap: 0.5rem; font-size: 1.125rem; font-weight: 700; margin-bottom: 1rem; }
+        .footer .logo { display: flex; align-items: center; gap: 0.5rem; font-size: 1.125rem; font-weight: 700; margin-bottom: 1rem; color: var(--color-white); }
         .footer .footer-title { font-size: 1.125rem; font-weight: 600; color: var(--color-white); margin-bottom: 1rem; }
         .footer ul li { margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem; }
         .footer ul a, .footer p { color: var(--color-text); }
@@ -128,7 +113,6 @@
         .footer .social-links { display: flex; gap: 1rem; }
         .footer .social-links a { color: var(--color-text-light); font-size: 1.25rem; }
         .footer .copyright { text-align: center; color: var(--color-text-light); margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--color-bg-lighter); }
-        
         /* --- ÖZEL CSS STİLLERİ BİTİŞ --- */
     </style>
 </head>
@@ -374,7 +358,7 @@
         <div class="container">
             <div class="grid grid-cols-4">
                 <div>
-                    <div class="logo">
+                    <div class="logo footer-title">
                         <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M192 208c0-17.7-14.3-32-32-32h-16c-35.3 0-64 28.7-64 64v48c0 35.3 28.7 64 64 64h16c17.7 0 32-14.3 32-32V208zm160 144h16c17.7 0 32-14.3 32-32V208c0-17.7-14.3-32-32-32h-16c-35.3 0-64 28.7-64 64v48c0 35.3 28.7 64 64 64zM256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm0-448c-14.1 0-27.4 2.3-40 6.6V32c0-17.7-14.3-32-32-32s-32 14.3-32 32V66.8C67.1 113.6 16 200 16 304c0 114.9 93.1 208 208 208s208-93.1 208-208c0-104-51.1-190.4-136-237.2V32c0-17.7-14.3-32-32-32s-32 14.3-32 32V70.6c-12.6-4.3-25.9-6.6-40-6.6z"/></svg>
                         <span>Çağrı Merkezi Kariyer</span>
                     </div>
