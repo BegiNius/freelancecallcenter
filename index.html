@@ -5,47 +5,84 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Çağrı Merkezi Kariyer | Evden Çalışma Fırsatları</title>
 
-    <!-- ===== PERFORMANS OPTİMİZASYONU: NİHAİ VERSİYON ===== -->
+    <!-- ===== PERFORMANS OPTİMİZASYONU: KRİTİK CSS NİHAİ VERSİYON ===== -->
 
-    <!-- CSS Dosyaları Senkron Yükleniyor (CLS Sorununu Çözmek İçin) -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <!-- Yazı tipi dosyaları yine de önceden yüklenerek hız korunuyor -->
+    <!-- Yazı tipi dosyaları her zaman önceden yüklenir -->
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
 
-    <style>
-        /* İkonların yüklenirken kayma yapmaması için yedek kural */
-        .fas, .fab {
-            display: inline-block;
-            width: 1.25em; 
-            text-align: center;
-        }
+    <!-- Büyük CSS dosyaları erteleyerek (asenkron) yüklenir -->
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"></noscript>
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
 
-        /* Diğer Custom Stiller */
-        html { scroll-behavior: smooth; }
-        body { min-height: 1024px; }
-        .rounded-button { border-radius: 8px !important; }
-        .rotate-180 { transform: rotate(180deg); }
-        .prose { line-height: 1.6; color: #D1D5DB; }
-        .prose h2, .prose h3 { color: #F9FAFB; margin-top: 2rem; margin-bottom: 1rem; }
-        .prose p, .prose ul, .prose li, .prose a { color: #D1D5DB; margin-bottom: 1rem; }
-        .prose a { text-decoration: underline; color: #60A5FA; }
-        .prose a:hover { color: #93C5FD; }
-        .cta-button { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+    <style>
+        /* --- KRİTİK CSS BAŞLANGICI --- */
+        /* Sayfanın ilk açılışta kaymasını ve stil bozukluğunu engelleyen en temel stiller */
+        
+        /* Genel Resetleme ve Temel Stiller */
+        body { margin: 0; background-color: #111827; color: #D1D5DB; font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; }
+        html { scroll-behavior: smooth; line-height: 1.5; }
+        a { color: inherit; text-decoration: inherit; }
+        
+        /* CLS önlemek için ikonlara sabit genişlik */
+        .fas, .fab { display: inline-block; width: 1.25em; text-align: center; }
+
+        /* Container Stilleri */
+        .max-w-7xl { max-width: 80rem; margin-left: auto; margin-right: auto; padding-left: 1rem; padding-right: 1rem; }
+        @media (min-width: 640px) { .sm\:px-6 { padding-left: 1.5rem; padding-right: 1.5rem; } }
+        @media (min-width: 1024px) { .lg\:px-8 { padding-left: 2rem; padding-right: 2rem; } }
+
+        /* Flexbox ve Hizalama */
+        .flex { display: flex; }
+        .items-center { align-items: center; }
+        .justify-between { justify-content: space-between; }
+        .justify-center { justify-content: center; }
+        
+        /* Header Stilleri */
+        header { position: sticky; top: 0; z-index: 50; background-color: #1F2937; box-shadow: 0 1px 3px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.06); border-bottom: 1px solid #374151; }
+        .h-16 { height: 4rem; }
+        
+        /* Hero Section Stilleri */
+        .relative { position: relative; }
+        .bg-gray-900 { background-color: #111827; }
+        .py-20 { padding-top: 5rem; padding-bottom: 5rem; }
+        .overflow-hidden { overflow: hidden; }
+        .text-center { text-align: center; }
+        .text-white { color: #ffffff; }
+        .text-blue-400 { color: #60A5FA; }
+        .font-bold { font-weight: 700; }
+        .font-extrabold { font-weight: 800; }
+        .font-semibold { font-weight: 600; }
+        .text-xl { font-size: 1.25rem; line-height: 1.75rem; }
+        .text-2xl { font-size: 1.5rem; line-height: 2rem; }
+        .text-4xl { font-size: 2.25rem; line-height: 2.5rem; }
+        @media (min-width: 768px) { .md\:text-6xl { font-size: 4rem; line-height: 1; } }
+        .mb-6 { margin-bottom: 1.5rem; }
+        .mb-8 { margin-bottom: 2rem; }
+        .mr-2 { margin-right: 0.5rem; }
+        .mr-3 { margin-right: 0.75rem; }
+        .max-w-3xl { max-width: 48rem; }
+        .mx-auto { margin-left: auto; margin-right: auto; }
+        .text-gray-400 { color: #9CA3AF; }
+        
+        /* Buton Stilleri */
+        .rounded-lg, .rounded-button { border-radius: 0.5rem; }
+        .bg-blue-600 { background-color: #2563EB; }
+        .px-8 { padding-left: 2rem; padding-right: 2rem; }
+        .py-4 { padding-top: 1rem; padding-bottom: 1rem; }
+        .text-lg { font-size: 1.125rem; line-height: 1.75rem; }
+        .whitespace-nowrap { white-space: nowrap; }
+        .cursor-pointer { cursor: pointer; }
+        .shadow-lg { box-shadow: 0 10px 15px -3px rgba(0,0,0,.1), 0 4px 6px -2px rgba(0,0,0,.05); }
+
+        /* --- KRİTİK CSS BİTİŞİ --- */
+
+        /* Geri kalan genel stiller */
         .cta-button:hover { transform: translateY(-2px); }
-        .sr-only {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            white-space: nowrap;
-            border-width: 0;
-        }
+        .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border-width: 0; }
     </style>
     <!-- ===== PERFORMANS OPTİMİZASYONLARI BİTİŞ ===== -->
 
@@ -54,7 +91,7 @@
 
 <div class="min-h-screen">
     <!-- Header -->
-    <header class="bg-gray-800 shadow-lg sticky top-0 z-50 border-b border-gray-700">
+    <header>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <div class="flex items-center">
@@ -84,7 +121,7 @@
                     Çağrı merkezi hizmetleri alanında deneyiminiz olmasa bile eğitimlerimizle sektöre adım atın.
                 </p>
                 <div class="flex justify-center">
-                     <a href="#nasil-baslarim" class="bg-blue-600 text-white px-8 py-4 text-lg font-semibold rounded-button hover:bg-blue-700 transition-colors whitespace-nowrap cursor-pointer cta-button shadow-blue-500/50 shadow-lg">
+                     <a href="#nasil-baslarim" class="bg-blue-600 text-white px-8 py-4 text-lg font-semibold rounded-lg hover:bg-blue-700 transition-colors whitespace-nowrap cursor-pointer cta-button shadow-lg">
                         <i class="fas fa-rocket mr-2"></i>
                         Hemen Başvurun
                     </a>
@@ -308,21 +345,17 @@
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="bg-gray-800 rounded-lg p-8 border border-gray-700">
                 <div class="prose max-w-none">
-                    <h2>Evden Müşteri Temsilcisi Olarak Çalışmanın Avantajları ve Freelance Kazanç Rehberi</h2>
+                    <h2 class="text-white">Evden Müşteri Temsilcisi Olarak Çalışmanın Avantajları ve Freelance Kazanç Rehberi</h2>
                     <p>Günümüzde teknolojinin gelişmesi ile birlikte evden çalışma imkanları artmış ve müşteri temsilciliği alanında freelance olarak çalışmak popüler hale gelmiştir. Bu rehberde evden müşteri temsilcisi olarak nasıl çalışabileceğiniz ve sürdürülebilir bir gelir elde edebileceğiniz konularında detaylı bilgiler bulacaksınız.</p>
                     <div id="article-short">
                         <p>Evden müşteri temsilcisi olarak çalışmak, hem kişisel özgürlüğünüzü korumanızı hem de düzenli bir gelir elde etmenizi sağlar. Bu çalışma modeli özellikle...</p>
                         <button onclick="toggleArticle()" class="bg-blue-600 text-white px-6 py-3 rounded-button hover:bg-blue-700 transition-colors whitespace-nowrap cursor-pointer">Devamını Oku</button>
                     </div>
                     <div id="article-full" class="space-y-6 hidden">
-                        <h3>Evden Müşteri Temsilciliği Nedir?</h3>
+                        <h3 class="text-white">Evden Müşteri Temsilciliği Nedir?</h3>
                         <p>Evden müşteri temsilciliği, şirketlerin müşteri hizmetleri departmanlarında uzaktan çalışma imkanı sunan bir iş modelidir. Bu sistemde çalışanlar, kendi evlerinin konforunda müşteri sorularını yanıtlar, şikayetleri çözümler ve satış süreçlerinde destek sağlarlar.</p>
-                        <h3>Freelance Müşteri Temsilcisi Olmanın Avantajları</h3>
+                        <h3 class="text-white">Freelance Müşteri Temsilcisi Olmanın Avantajları</h3>
                         <p>Freelance müşteri temsilcisi olarak çalışmanın birçok avantajı bulunmaktadır. Bunların başında esnek çalışma saatleri gelir. Kendi programınızı belirleyebilir, aile yaşamınız ve diğer sorumluluklarınızla uyumlu bir çalışma düzeni oluşturabilirsiniz.</p>
-                        <h3>Gerekli Teknik Donanım ve Beceriler</h3>
-                        <p>Evden müşteri temsilcisi olarak çalışmak için temel teknik donanımlara ihtiyacınız vardır. Bunlar arasında güvenilir bir bilgisayar, stabil internet bağlantısı ve kaliteli kulaklık yer alır.</p>
-                        <h3>Kazanç Potansiyeli ve Ödeme Sistemleri</h3>
-                        <p>Freelance müşteri temsilcisi olarak kazanç potansiyeliniz çalışma saatleriniz ve performansınıza bağlı olarak değişir. Genellikle saatlik ücret sistemi uygulanır ve bu ücret 25-50 TL arasında değişebilir.</p>
                         <button onclick="toggleArticle()" class="bg-gray-600 text-white px-6 py-3 rounded-button hover:bg-gray-700 transition-colors whitespace-nowrap cursor-pointer">Kısalt</button>
                     </div>
                 </div>
