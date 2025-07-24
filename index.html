@@ -7,11 +7,9 @@
 
     <!-- ===== PERFORMANS VE ERİŞİLEBİLİRLİK OPTİMİZASYONLARI BAŞLANGIÇ ===== -->
 
-    <!-- Kritik Yazı Tipi Dosyalarını Önceden Yükle -->
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
 
-    <!-- Oluşturmayı Engelleyen CSS'i Ertele -->
     <link rel="preload" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"></noscript>
     
@@ -26,7 +24,6 @@
           font-weight: 900;
           font-display: swap;
           src: url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/webfonts/fa-solid-900.woff2) format("woff2");
-          /* Yazı tipi metriği ayarlarıyla kaymayı önle */
           size-adjust: 105%;
           ascent-override: 90%;
         }
@@ -53,7 +50,6 @@
         input[type="number"] { -moz-appearance: textfield; }
         .cta-button { transition: transform 0.2s ease, box-shadow 0.2s ease; }
         .cta-button:hover { transform: translateY(-2px); }
-        /* Erişilebilirlik için görsel olarak gizli sınıf */
         .sr-only {
             position: absolute;
             width: 1px;
@@ -265,7 +261,7 @@
                             <p class="text-gray-400">İstanbul</p>
                         </div>
                     </div>
-                    <p class="text-gray-400 mb-4">"6 aydır evden müşteri temsilcisi olarak çalışıyorum. Aylık 3500 TL kazanıyorum ve çocuklarımla daha fazla zaman geçirebiliyorum."</p>
+                    <p class="text-gray-300 mb-4">"6 aydır evden müşteri temsilcisi olarak çalışıyorum. Aylık 3500 TL kazanıyorum ve çocuklarımla daha fazla zaman geçirebiliyorum."</p>
                     <div class="flex text-yellow-400"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                 </div>
                 <div class="bg-gray-800 p-8 rounded-lg border border-gray-700">
@@ -368,7 +364,8 @@
             <div class="grid md:grid-cols-4 gap-8">
                 <div>
                     <div class="flex items-center mb-4"><i class="fas fa-headset text-2xl text-blue-400 mr-3"></i><h3 class="text-xl font-bold">Çağrı Merkezi Kariyer</h3></div>
-                    <p class="text-gray-400">Remote çalışarak müşteri hizmetleri uzmanı olun ve kariyerinizi şekillendirin.</p>
+                    <!-- KONTRAST GÜNCELLEMESİ -->
+                    <p class="text-gray-300">Remote çalışarak müşteri hizmetleri uzmanı olun ve kariyerinizi şekillendirin.</p>
                 </div>
                 <div>
                     <h4 class="text-lg font-semibold mb-4 text-white">Site Haritası</h4>
@@ -381,7 +378,7 @@
                 </div>
                 <div>
                     <h4 class="text-lg font-semibold mb-4 text-white">İletişim</h4>
-                    <ul class="space-y-2 text-gray-400">
+                    <ul class="space-y-2 text-gray-300">
                         <li><i class="fas fa-phone mr-2"></i> 0555 123 45 67</li>
                         <li><i class="fas fa-envelope mr-2"></i> kariyer@cagrimerkezikariyer.com</li>
                         <li><i class="fas fa-clock mr-2"></i> 7/24 Destek</li>
@@ -402,7 +399,8 @@
                     </div>
                 </div>
             </div>
-            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-500"><p>© 2025 Çağrı Merkezi Kariyer. Tüm hakları saklıdır.</p></div>
+            <!-- KONTRAST GÜNCELLEMESİ -->
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400"><p>© 2025 Çağrı Merkezi Kariyer. Tüm hakları saklıdır.</p></div>
         </div>
     </footer>
     
