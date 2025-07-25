@@ -213,7 +213,7 @@
       .section-dark { background-color: var(--color-bg); }
       .section-title { font-size: 2rem; font-weight: 700; margin-bottom: 1rem; }
       @media (min-width: 768px) { .section-title { font-size: 2.25rem; } }
-      .section-subtitle { font-size: 1.25rem; color: var(--color-text-light); max-width: 48rem; margin: 0 auto 10rem auto; }
+      .section-subtitle { font-size: 1.25rem; color: var(--color-text-light); max-width: 48rem; margin: 0 auto 15rem auto; }
       .header { position: sticky; top: 0; z-index: 50; background-color: var(--color-bg-light); border-bottom: 1px solid var(--color-bg-lighter); }
       .header .container { display: flex; justify-content: space-between; align-items: center; height: 4rem; }
       .header .logo { display: flex; align-items: center; font-size: 1.25rem; color: var(--color-white); font-weight: 700; }
@@ -226,7 +226,7 @@
       .hero-subtitle { font-size: 1.25rem; color: var(--color-text-light); max-width: 48rem; margin: 0 auto 2rem auto; }
       .grid { display: grid; gap: 2rem;justify-items: stretch; }
       @media (min-width: 768px) { .grid-cols-2 { grid-template-columns: repeat(2, 1fr); align-items: center; } .grid-cols-3 { grid-template-columns: repeat(3, 1fr); } .grid-cols-4 { grid-template-columns: repeat(4, 1fr); } }
-      .card { background-color: var(--color-bg); padding: 2rem; border-radius: 0.75rem; border: 1px solid var(--color-bg-lighter);wid}
+      .card { background-color: var(--color-bg); padding: 2rem; border-radius: 0.75rem; border: 1px solid var(--color-bg-lighter);}
       .card-hover { transition: transform 0.2s ease; }
       .card-hover:hover { transform: scale(1.05); }
       .card .icon-wrapper { width: 4rem; height: 4rem; margin: 0 auto 1rem auto; border-radius: 9999px; display: flex; align-items: center; justify-content: center; color: var(--color-white); }
@@ -317,6 +317,60 @@
       .toggle-article-btn-wrapper {
         text-align: center;
         margin-top: 2rem;
+      }
+      
+      /* YORUM SLIDER STİLLERİ */
+      .slider-container {
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+        -webkit-mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+        mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+      }
+      .slider-track {
+        display: flex;
+        gap: 2rem;
+        /* (15 yorum + 15 kopya) * (kart genişliği + boşluk) */
+        width: calc(30 * (20rem + 2rem)); 
+        animation: scroll 80s linear infinite;
+      }
+       .slider-track:hover {
+        animation-play-state: paused;
+      }
+      .comment-card {
+        flex-shrink: 0;
+        width: 20rem;
+        height: 100%;
+        background-color: var(--color-bg);
+        padding: 2rem;
+        border-radius: 0.75rem;
+        border: 1px solid var(--color-border);
+        display: flex;
+        flex-direction: column;
+      }
+      .comment-card .stars {
+        color: var(--color-yellow);
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+      }
+      .comment-card p {
+        color: var(--color-text-light);
+        flex-grow: 1;
+        margin-bottom: 1rem;
+      }
+      .comment-card footer {
+        color: var(--color-white);
+        font-weight: 600;
+        text-align: right;
+      }
+      @keyframes scroll {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          /* 15 orijinal kartın genişliği kadar kaydır */
+          transform: translateX(calc(-15 * (20rem + 2rem)));
+        }
       }
 
       /* FOOTER STİLLERİ */
@@ -614,6 +668,174 @@
                 </div>
             </div>
         </section>
+        
+        <!-- YORUMLAR BÖLÜMÜ -->
+        <section id="yorumlar" class="section section-light" style="padding-top: 5rem; padding-bottom: 5rem;">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-title">Çalışanlarımız Ne Diyor?</h2>
+                    <p class="section-subtitle">Evden çalışma deneyimini bizimle yaşayanların yorumları.</p>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-track">
+                        <!-- 15 Orijinal Yorum -->
+                        <div class="comment-card">
+                            <div class="stars">★★★★★</div>
+                            <p>"Bu iş fırsatı hayatımı değiştirdi. Esnek saatler sayesinde hem aileme vakit ayırabiliyorum hem de iyi bir gelir elde ediyorum. Başvuru süreci çok kolaydı."</p>
+                            <footer><strong>Ayşe Yılmaz</strong></footer>
+                        </div>
+                        <div class="comment-card">
+                            <div class="stars">★★★★★</div>
+                            <p>"Daha önce hiç çağrı merkezi deneyimim olmamasına rağmen verdikleri eğitimler sayesinde kısa sürede işe adapte oldum. Ekip desteği harika!"</p>
+                            <footer><strong>Mehmet Kaya</strong></footer>
+                        </div>
+                        <div class="comment-card">
+                            <div class="stars">★★★★★</div>
+                            <p>"Evden çalışmanın bu kadar verimli olabileceğini düşünmezdim. Ulaşım derdi yok, kendi düzenimi kendim kuruyorum. Performans primleri de çok motive edici."</p>
+                            <footer><strong>Fatma Demir</strong></footer>
+                        </div>
+                        <div class="comment-card">
+                            <div class="stars">★★★★☆</div>
+                            <p>"Sistemleri çok kullanıcı dostu. Teknik bir sorun yaşadığımda destek ekibi anında yardımcı oldu. Sadece internetimin yavaş olduğu günler zorlanıyorum."</p>
+                            <footer><strong>Ali Can</strong></footer>
+                        </div>
+                        <div class="comment-card">
+                            <div class="stars">★★★★★</div>
+                            <p>"Öğrenciyim ve ders programıma göre çalışma saatlerimi ayarlayabilmek harika bir şey. Harçlığımı çıkarıyorum ve deneyim kazanıyorum."</p>
+                            <footer><strong>Zeynep Arslan</strong></footer>
+                        </div>
+                        <div class="comment-card">
+                            <div class="stars">★★★★★</div>
+                            <p>"Yıllardır ofis ortamında çalıştıktan sonra evden çalışmak ilaç gibi geldi. Daha az stres, daha çok verim. Şirket kültürünü uzaktan bile hissettiriyorlar."</p>
+                            <footer><strong>Mustafa Öztürk</strong></footer>
+                        </div>
+                        <div class="comment-card">
+                            <div class="stars">★★★★★</div>
+                            <p>"Maaş ve prim ödemeleri asla gecikmiyor. Bu güvenle çalışmak çok güzel. Başvurmayı düşünenlere kesinlikle tavsiye ederim."</p>
+                            <footer><strong>Emine Şahin</strong></footer>
+                        </div>
+                        <div class="comment-card">
+                            <div class="stars">★★★★★</div>
+                            <p>"Verilen online eğitimler çok profesyonelce hazırlanmış. Sadece işi değil, iletişim becerilerimi de geliştirmemi sağladı."</p>
+                            <footer><strong>Hasan Çelik</strong></footer>
+                        </div>
+                        <div class="comment-card">
+                            <div class="stars">★★★★☆</div>
+                            <p>"Bazen yoğunluktan yorulsam da evimde olduğumu bilmek her şeye değiyor. Takım liderimiz sürekli bizimle iletişim halinde ve bizi motive ediyor."</p>
+                            <footer><strong>Yasemin Koç</strong></footer>
+                        </div>
+                        <div class="comment-card">
+                            <div class="stars">★★★★★</div>
+                            <p>"Engelli bir birey olarak benim için en uygun iş modeli. Evimden çıkmadan, rahatça çalışıp para kazanabiliyorum. Bu imkanı sağladığınız için teşekkürler."</p>
+                            <footer><strong>İbrahim Aydın</strong></footer>
+                        </div>
+                        <div class="comment-card">
+                            <div class="stars">★★★★★</div>
+                            <p>"Başta tereddüt etmiştim ama iyi ki aramışım. Süreç tam anlattıkları gibi ilerledi ve bir hafta içinde eğitimlere başlayıp kazanmaya başladım."</p>
+                            <footer><strong>Sultan Gürbüz</strong></footer>
+                        </div>
+                        <div class="comment-card">
+                            <div class="stars">★★★★★</div>
+                            <p>"Performansa dayalı bonus sistemi gerçekten adil. Ne kadar çok çabalarsanız o kadar çok kazanıyorsunuz. Bu da insanı daha çok teşvik ediyor."</p>
+                            <footer><strong>Murat Aksoy</strong></footer>
+                        </div>
+                        <div class="comment-card">
+                            <div class="stars">★★★★☆</div>
+                            <p>"Çocuklarım küçük olduğu için dışarıda çalışamıyordum. Bu iş sayesinde onlarla ilgilenirken aynı zamanda aile bütçesine katkıda bulunabiliyorum."</p>
+                            <footer><strong>Songül Doğan</strong></footer>
+                        </div>
+                        <div class="comment-card">
+                            <div class="stars">★★★★★</div>
+                            <p>"Teknoloji ve altyapı konusunda çok başarılılar. Sağladıkları bilgisayar ve kulaklık oldukça kaliteli. Kesintisiz bir çalışma ortamı sunuyorlar."</p>
+                            <footer><strong>Fatih Tekin</strong></footer>
+                        </div>
+                        <div class="comment-card">
+                            <div class="stars">★★★★★</div>
+                            <p>"Mülakat süreci çok şeffaf ve pozitifti. Kendimi değerli hissettim. Ekibin bir parçası olmaktan çok mutluyum."</p>
+                            <footer><strong>Hülya Tuncel</strong></footer>
+                        </div>
+
+                        <!-- Sonsuz Döngü için Kopyalanmış 15 Yorum -->
+                        <div class="comment-card">
+                            <div class="stars">★★★★★</div>
+                            <p>"Bu iş fırsatı hayatımı değiştirdi. Esnek saatler sayesinde hem aileme vakit ayırabiliyorum hem de iyi bir gelir elde ediyorum. Başvuru süreci çok kolaydı."</p>
+                            <footer><strong>Ayşe Yılmaz</strong></footer>
+                        </div>
+                        <div class="comment-card">
+                            <div class="stars">★★★★★</div>
+                            <p>"Daha önce hiç çağrı merkezi deneyimim olmamasına rağmen verdikleri eğitimler sayesinde kısa sürede işe adapte oldum. Ekip desteği harika!"</p>
+                            <footer><strong>Mehmet Kaya</strong></footer>
+                        </div>
+                        <div class="comment-card">
+                            <div class="stars">★★★★★</div>
+                            <p>"Evden çalışmanın bu kadar verimli olabileceğini düşünmezdim. Ulaşım derdi yok, kendi düzenimi kendim kuruyorum. Performans primleri de çok motive edici."</p>
+                            <footer><strong>Fatma Demir</strong></footer>
+                        </div>
+                        <div class="comment-card">
+                            <div class="stars">★★★★☆</div>
+                            <p>"Sistemleri çok kullanıcı dostu. Teknik bir sorun yaşadığımda destek ekibi anında yardımcı oldu. Sadece internetimin yavaş olduğu günler zorlanıyorum."</p>
+                            <footer><strong>Ali Can</strong></footer>
+                        </div>
+                        <div class="comment-card">
+                            <div class="stars">★★★★★</div>
+                            <p>"Öğrenciyim ve ders programıma göre çalışma saatlerimi ayarlayabilmek harika bir şey. Harçlığımı çıkarıyorum ve deneyim kazanıyorum."</p>
+                            <footer><strong>Zeynep Arslan</strong></footer>
+                        </div>
+                        <div class="comment-card">
+                            <div class="stars">★★★★★</div>
+                            <p>"Yıllardır ofis ortamında çalıştıktan sonra evden çalışmak ilaç gibi geldi. Daha az stres, daha çok verim. Şirket kültürünü uzaktan bile hissettiriyorlar."</p>
+                            <footer><strong>Mustafa Öztürk</strong></footer>
+                        </div>
+                        <div class="comment-card">
+                            <div class="stars">★★★★★</div>
+                            <p>"Maaş ve prim ödemeleri asla gecikmiyor. Bu güvenle çalışmak çok güzel. Başvurmayı düşünenlere kesinlikle tavsiye ederim."</p>
+                            <footer><strong>Emine Şahin</strong></footer>
+                        </div>
+                        <div class="comment-card">
+                            <div class="stars">★★★★★</div>
+                            <p>"Verilen online eğitimler çok profesyonelce hazırlanmış. Sadece işi değil, iletişim becerilerimi de geliştirmemi sağladı."</p>
+                            <footer><strong>Hasan Çelik</strong></footer>
+                        </div>
+                        <div class="comment-card">
+                            <div class="stars">★★★★☆</div>
+                            <p>"Bazen yoğunluktan yorulsam da evimde olduğumu bilmek her şeye değiyor. Takım liderimiz sürekli bizimle iletişim halinde ve bizi motive ediyor."</p>
+                            <footer><strong>Yasemin Koç</strong></footer>
+                        </div>
+                        <div class="comment-card">
+                            <div class="stars">★★★★★</div>
+                            <p>"Engelli bir birey olarak benim için en uygun iş modeli. Evimden çıkmadan, rahatça çalışıp para kazanabiliyorum. Bu imkanı sağladığınız için teşekkürler."</p>
+                            <footer><strong>İbrahim Aydın</strong></footer>
+                        </div>
+                        <div class="comment-card">
+                            <div class="stars">★★★★★</div>
+                            <p>"Başta tereddüt etmiştim ama iyi ki aramışım. Süreç tam anlattıkları gibi ilerledi ve bir hafta içinde eğitimlere başlayıp kazanmaya başladım."</p>
+                            <footer><strong>Sultan Gürbüz</strong></footer>
+                        </div>
+                        <div class="comment-card">
+                            <div class="stars">★★★★★</div>
+                            <p>"Performansa dayalı bonus sistemi gerçekten adil. Ne kadar çok çabalarsanız o kadar çok kazanıyorsunuz. Bu da insanı daha çok teşvik ediyor."</p>
+                            <footer><strong>Murat Aksoy</strong></footer>
+                        </div>
+                        <div class="comment-card">
+                            <div class="stars">★★★★☆</div>
+                            <p>"Çocuklarım küçük olduğu için dışarıda çalışamıyordum. Bu iş sayesinde onlarla ilgilenirken aynı zamanda aile bütçesine katkıda bulunabiliyorum."</p>
+                            <footer><strong>Songül Doğan</strong></footer>
+                        </div>
+                        <div class="comment-card">
+                            <div class="stars">★★★★★</div>
+                            <p>"Teknoloji ve altyapı konusunda çok başarılılar. Sağladıkları bilgisayar ve kulaklık oldukça kaliteli. Kesintisiz bir çalışma ortamı sunuyorlar."</p>
+                            <footer><strong>Fatih Tekin</strong></footer>
+                        </div>
+                        <div class="comment-card">
+                            <div class="stars">★★★★★</div>
+                            <p>"Mülakat süreci çok şeffaf ve pozitifti. Kendimi değerli hissettim. Ekibin bir parçası olmaktan çok mutluyum."</p>
+                            <footer><strong>Hülya Tuncel</strong></footer>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <footer class="footer">
@@ -686,14 +908,12 @@
       });
     }
 
-    // İÇİNDEKİLER TABLOSU İÇİN YUMUŞAK KAYDIRMA
     document.querySelectorAll('.toc-link').forEach(link => {
       link.addEventListener('click', function(e) {
         e.preventDefault();
         const targetId = this.getAttribute('href').substring(1);
         const targetElement = document.getElementById(targetId);
         if (targetElement) {
-          // Makalenin açık olduğundan emin ol ve sonra kaydır
           if(!articleContainer.classList.contains('expanded')){
             toggleBtn.click();
           }
@@ -702,7 +922,7 @@
               behavior: 'smooth',
               block: 'start'
             });
-          }, 200); // 500ms beklem
+          }, 200);
         }
       });
     });
